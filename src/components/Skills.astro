@@ -1,0 +1,11 @@
+---
+const skills = [
+  ['HTML', '01', 'Accessible semantic structure'], ['CSS', '02', 'Responsive visual systems'], ['JS', '03', 'Thoughtful interactions'], ['AST', '04', 'Fast content-driven sites'],
+  ['Git', '05', 'Versioned progress'], ['GH', '06', 'Collaborative workflows'], ['▲', '07', 'Simple deployments'], ['VS', '08', 'Focused development'],
+  ['FIG', '09', 'Interface exploration'], ['RWD', '10', 'Every screen considered'], ['UI', '11', 'Useful visual language']
+];
+---
+<section class="section section-shell" id="skills" data-reveal>
+  <div class="section-heading"><div><div class="eyebrow">Tools of the trade</div><h2>Things I <span>work with.</span></h2></div><p>A growing toolkit for taking an idea from a rough sketch to a finished experience.</p></div>
+  <div class="skills-grid">{skills.map(([name, icon, description]) => <article class="skill-card glass"><div class="skill-icon">{icon}</div><h3>{name}</h3><p>{description}</p></article>)}</div>
+</section>

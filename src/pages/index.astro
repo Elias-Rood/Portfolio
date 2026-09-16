@@ -1,0 +1,33 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Hero from '../components/Hero.astro';
+import About from '../components/About.astro';
+import Skills from '../components/Skills.astro';
+import Services from '../components/Services.astro';
+import Projects from '../components/Projects.astro';
+import Journey from '../components/Journey.astro';
+import Contact from '../components/Contact.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout>
+  <Navbar />
+  <main>
+    <Hero />
+    <About />
+    <Skills />
+    <Services />
+    <Projects />
+    <Journey />
+    <section class="cta section-shell" data-reveal>
+      <div class="cta-glow"></div>
+      <div class="eyebrow">Have an idea worth making?</div>
+      <h2>Have a project<br /><span>in mind?</span></h2>
+      <p>Let's build something modern, useful, and memorable.</p>
+      <a class="button button-light" href="#contact">Contact me <span aria-hidden="true">↗</span></a>
+    </section>
+    <Contact />
+  </main>
+  <Footer />
+</Layout>
