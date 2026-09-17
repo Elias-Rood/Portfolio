@@ -1,14 +1,27 @@
 ---
 const services = [
-  ['01', 'Web Development', 'Thoughtful, performant websites built around your goals and your audience.'],
-  ['02', 'Responsive Design', 'Interfaces that feel considered and easy to use on every screen size.'],
-  ['03', 'Landing Pages', 'Focused pages that give an idea, campaign, or product room to make an impression.'],
-  ['04', 'Business Websites', 'Clear digital homes for businesses ready to look as good as the work they do.'],
-  ['05', 'Website Maintenance', 'Small improvements, updates, and support to keep your site moving forward.'],
-  ['06', 'UI/UX Design', 'Simple flows and visual systems that make digital products feel natural.']
+  ['01', 'Web Design', 'Create modern, responsive and visually appealing websites.'],
+  ['02', 'Web Development', 'Build functional websites using modern web technologies.'],
+  ['03', 'Website Maintenance', 'Manage, update and maintain websites after launch.'],
+  ['04', 'Hosting', 'Provide hosting solutions for websites.'],
 ];
 ---
 <section class="section section-shell" id="services" data-reveal>
-  <div class="section-heading"><div><div class="eyebrow">Ways we can work</div><h2>What I <span>can do.</span></h2></div><p>Practical creative support for the moments when a good idea needs a thoughtful digital shape.</p></div>
-  <div class="services-grid">{services.map(([number, name, description]) => <article class="service-card glass"><span class="service-number">/{number}</span><h3>{name}</h3><p>{description}</p></article>)}</div>
+  <div class="section-heading">
+    <div>
+      <div class="eyebrow">Services</div>
+      <h2>What ErStudio <span>offers.</span></h2>
+    </div>
+    <p>I help businesses and individuals build a cleaner, more professional online presence with clear and reliable support.</p>
+  </div>
+
+  <div class="services-grid">
+    {services.map(([number, name, description]) => (
+      <article class="service-card glass">
+        <span class="service-number">0{number}</span>
+        <h3>{name}</h3>
+        <p>{description}</p>
+      </article>
+    ))}
+  </div>
 </section>

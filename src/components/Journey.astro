@@ -1,13 +1,37 @@
----
-const milestones = [
-  ['Now', 'Starting freelance web development', 'Making space for small, meaningful collaborations and learning from every one.'],
-  ['2026', 'Working with Astro', 'Exploring fast, content-focused sites and the joy of a smaller surface area.'],
-  ['2025', 'Learning Git and GitHub', 'Getting comfortable with version control and sharing work in progress.'],
-  ['2025', 'Building websites', 'Turning personal experiments and business ideas into working pages.'],
-  ['2024', 'Learning UI/UX design', 'Studying how structure, hierarchy, and small details change how things feel.'],
-  ['2024', 'Learning web development', 'Starting with the fundamentals and finding a reason to keep going.']
-];
----
-<section class="section section-shell" data-reveal>
-  <div class="journey-layout"><div class="journey-intro"><div class="eyebrow">Still becoming</div><h2>My <span>journey.</span></h2><p>A timeline of the ideas, tools, and small experiments that are shaping how I work.</p></div><div class="timeline">{milestones.map(([date, title, description]) => <div class="timeline-item"><div class="timeline-date">{date}</div><div class="timeline-content"><h3>{title}</h3><p>{description}</p></div></div>)}</div></div>
+<section class="section section-shell" id="education" data-reveal>
+  <div class="education-grid">
+    <article class="info-card glass">
+      <div class="eyebrow">Education</div>
+      <h2>Education</h2>
+      <div class="info-list">
+        <div class="info-item">
+          <span>School</span>
+          <strong>El Paso High School</strong>
+        </div>
+        <div class="info-item">
+          <span>Status</span>
+          <strong>Student</strong>
+        </div>
+        <div class="info-item">
+          <span>Career Goals</span>
+          <strong>Software Engineer, Designer, Entrepreneur</strong>
+        </div>
+      </div>
+    </article>
+
+    <article class="info-card glass">
+      <div class="eyebrow">Certifications</div>
+      <h2>Certifications</h2>
+      <div class="cert-list">
+        <div class="cert-item">
+          <span class="badge success">Completed</span>
+          <strong>Microsoft Word Specialist</strong>
+        </div>
+        <div class="cert-item">
+          <span class="badge pending">In Progress</span>
+          <strong>UI/UX Designer</strong>
+        </div>
+      </div>
+    </article>
+  </div>
 </section>

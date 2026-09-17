@@ -7,8 +7,8 @@ interface Props {
 }
 
 const {
-  title = 'Alex Morgan | Web Developer & Digital Creator',
-  description = 'A personal portfolio for Alex Morgan, a web developer and digital creator building thoughtful digital experiences for businesses and people.',
+  title = 'Elias Rodriguez | Web Developer & Designer | ErStudio',
+  description = 'Elias Rodriguez is a student entrepreneur and web developer & designer building modern websites for small businesses and individuals through ErStudio.',
 } = Astro.props;
 ---
 <!doctype html>
@@ -17,20 +17,53 @@ const {
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content={description} />
-    <meta name="theme-color" content="#090a0d" />
+    <meta name="theme-color" content="#090d17" />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:type" content="website" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <title>{title}</title>
   </head>
-  <body>
+  <body data-theme="dark" data-time="night">
     <div class="ambient ambient-one"></div>
     <div class="ambient ambient-two"></div>
     <slot />
     <script>
+      const body = document.body;
       const menuButton = document.querySelector('[data-menu-button]');
       const mobileMenu = document.querySelector('[data-mobile-menu]');
+      const themeButtons = document.querySelectorAll('[data-theme-toggle]');
+
+      const applyTimeTheme = () => {
+        const hour = new Date().getHours();
+        if (hour >= 5 && hour < 12) {
+          body.dataset.time = 'morning';
+        } else if (hour >= 12 && hour < 17) {
+          body.dataset.time = 'afternoon';
+        } else if (hour >= 17 && hour < 21) {
+          body.dataset.time = 'evening';
+        } else {
+          body.dataset.time = 'night';
+        }
+      };
+
+      const applyTheme = (theme) => {
+        body.dataset.theme = theme;
+        const icon = document.querySelector('[data-theme-icon]');
+        if (icon) {
+          icon.textContent = theme === 'dark' ? '☀️' : '🌙';
+        }
+        themeButtons.forEach((button) => {
+          const isDark = theme === 'dark';
+          button.setAttribute('aria-label', isDark ? 'Switch to light mode' : 'Switch to dark mode');
+          button.dataset.active = isDark ? 'dark' : 'light';
+        });
+      };
+
+      const savedTheme = localStorage.getItem('erstudio-theme');
+      applyTimeTheme();
+      applyTheme(savedTheme || 'dark');
+
       menuButton?.addEventListener('click', () => {
         const isOpen = mobileMenu?.classList.toggle('is-open');
         menuButton.setAttribute('aria-expanded', String(isOpen));
@@ -38,6 +71,14 @@ const {
 
       document.querySelectorAll('[data-mobile-menu] a').forEach((link) => {
         link.addEventListener('click', () => mobileMenu?.classList.remove('is-open'));
+      });
+
+      themeButtons.forEach((button) => {
+        button.addEventListener('click', () => {
+          const nextTheme = body.dataset.theme === 'dark' ? 'light' : 'dark';
+          localStorage.setItem('erstudio-theme', nextTheme);
+          applyTheme(nextTheme);
+        });
       });
 
       const revealObserver = new IntersectionObserver((entries) => {
@@ -50,14 +91,6 @@ const {
       }, { threshold: 0.12 });
 
       document.querySelectorAll('[data-reveal]').forEach((element) => revealObserver.observe(element));
-
-      const form = document.querySelector<HTMLFormElement>('[data-contact-form]');
-      const formNote = document.querySelector<HTMLElement>('[data-form-note]');
-      form?.addEventListener('submit', (event) => {
-        event.preventDefault();
-        if (formNote) formNote.textContent = 'Thanks - your message is ready to be connected to a backend.';
-        form.reset();
-      });
     </script>
   </body>
 </html>
