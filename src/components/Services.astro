@@ -9,18 +9,18 @@ const services = [
 <section class="section section-shell" id="services" data-reveal>
   <div class="section-heading">
     <div>
-      <div class="eyebrow">Services</div>
-      <h2>What ErStudio <span>offers.</span></h2>
+      <div class="eyebrow" data-i18n="services.eyebrow">Services</div>
+      <h2><span data-i18n="services.title">What ErStudio</span> <span data-i18n="services.titleAccent">offers.</span></h2>
     </div>
-    <p>I help businesses and individuals build a cleaner, more professional online presence with clear and reliable support.</p>
+    <p data-i18n="services.description">I help businesses and individuals build a cleaner, more professional online presence with clear and reliable support.</p>
   </div>
 
   <div class="services-grid">
     {services.map(([number, name, description]) => (
       <article class="service-card glass">
         <span class="service-number">0{number}</span>
-        <h3>{name}</h3>
-        <p>{description}</p>
+        <h3 data-i18n={`services.${number}.name`}>{name}</h3>
+        <p data-i18n={`services.${number}.description`}>{description}</p>
       </article>
     ))}
   </div>
