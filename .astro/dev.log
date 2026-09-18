@@ -16,3 +16,19 @@
 {"message":"[200] / 15ms","label":null,"level":"info"}
 {"message":"src/layouts/Layout.astro","label":"watch","level":"info"}
 {"message":"[200] / 41ms","label":null,"level":"info"}
+{"message":"[200] / 10ms","label":null,"level":"info"}
+{"message":"[200] / 24ms","label":null,"level":"info"}
+{"message":".env.local changed, restarting server...","label":"vite","level":"info"}
+{"message":"connected.","label":"vite","level":"info"}
+{"message":"connected.","label":"vite","level":"info"}
+{"message":"Re-optimizing dependencies because vite config has changed","label":"vite","level":"info"}
+{"message":"server restarted.","label":"vite","level":"info"}
+{"message":"[200] / 43ms","label":null,"level":"info"}
+{"message":"src/layouts/Layout.astro","label":"watch","level":"info"}
+{"message":"src/layouts/Layout.astro","label":"watch","level":"info"}
+{"message":"/src/styles/global.css","label":"watch","level":"info"}
+{"message":"[200] / 41ms","label":null,"level":"info"}
+{"message":"[200] / 16ms","label":null,"level":"info"}
+{"message":"/src/styles/global.css","label":"watch","level":"info"}
+{"message":"src/layouts/Layout.astro","label":"watch","level":"info"}
+{"message":"[200] / 95ms","label":null,"level":"info"}

@@ -14,13 +14,10 @@
       <span data-theme-icon aria-hidden="true">☀️</span>
       <span class="theme-label" data-theme-label>Light Mode</span>
     </button>
-    <label class="language-picker" title="Language">
-      <span aria-hidden="true">◎</span>
-      <select data-language-select aria-label="Language">
-        <option value="en">EN</option>
-        <option value="es">ES</option>
-      </select>
-    </label>
+    <div class="desktop-language-picker" role="group" aria-label="Language">
+      <button type="button" data-language-choice="en" aria-pressed="true">EN</button>
+      <button type="button" data-language-choice="es" aria-pressed="false">ES</button>
+    </div>
     <a class="button button-primary nav-cta" href="#contact"><span data-i18n="nav.contact">Contact</span> <span aria-hidden="true">↗</span></a>
   </div>
   <button class="menu-button" data-menu-button aria-expanded="false" aria-controls="mobile-menu" aria-label="Toggle navigation"><span aria-hidden="true">☰</span></button>

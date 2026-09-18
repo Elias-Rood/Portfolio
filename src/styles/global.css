@@ -243,19 +243,52 @@ body[data-theme='light'] .glass {
   transition: background-color .3s ease, color .3s ease, border-color .3s ease, box-shadow .3s ease;
 }
 .theme-label { font-size: .65rem; font-weight: 700; }
-.language-picker {
+.desktop-language-picker {
   display: inline-flex;
   align-items: center;
-  gap: 5px;
-  height: 40px;
-  padding: 0 9px;
-  border: 1px solid var(--line);
-  border-radius: 12px;
-  background: var(--wash);
-  color: var(--text);
-  font-size: .65rem;
+  gap: 14px;
+  margin: 0 4px;
+}
+.desktop-language-picker button {
+  position: relative;
+  padding: 6px 0;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  color: var(--muted);
+  cursor: pointer;
+  font: 600 .68rem 'Manrope', sans-serif;
   font-weight: 700;
-  transition: background-color .3s ease, color .3s ease, border-color .3s ease;
+  opacity: .62;
+  transition: color .25s ease, opacity .25s ease;
+}
+.desktop-language-picker button::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 2px;
+  border-radius: 999px;
+  background: var(--accent);
+  box-shadow: 0 0 10px var(--accent);
+  opacity: 0;
+  transform: scaleX(.45);
+  transition: opacity .25s ease, transform .25s ease;
+}
+.desktop-language-picker button:hover,
+.desktop-language-picker button:focus-visible,
+.desktop-language-picker button.is-active {
+  color: var(--text);
+  opacity: 1;
+}
+.desktop-language-picker button.is-active::after {
+  opacity: 1;
+  transform: scaleX(1);
+}
+.desktop-language-picker button:focus-visible {
+  border-radius: 3px;
+  box-shadow: 0 0 0 3px var(--accent-soft);
 }
 .language-picker select {
   border: 0;

@@ -34,6 +34,7 @@ const {
       const mobileMenu = document.querySelector('[data-mobile-menu]');
       const themeButtons = document.querySelectorAll<HTMLElement>('[data-theme-toggle]');
       const languageSelects = document.querySelectorAll<HTMLSelectElement>('[data-language-select]');
+      const languageChoices = document.querySelectorAll<HTMLButtonElement>('[data-language-choice]');
       const translations: Record<string, Record<string, string>> = {
         en: {
           'nav.home': 'Home', 'nav.about': 'About', 'nav.skills': 'Skills', 'nav.services': 'Services', 'nav.projects': 'Projects', 'nav.education': 'Education', 'nav.contact': 'Contact',
@@ -68,6 +69,11 @@ const {
           }
         });
         languageSelects.forEach((select) => { select.value = language; });
+        languageChoices.forEach((choice) => {
+          const isActive = choice.dataset.languageChoice === language;
+          choice.classList.toggle('is-active', isActive);
+          choice.setAttribute('aria-pressed', String(isActive));
+        });
       };
 
       const applyTheme = (theme: string) => {
@@ -112,6 +118,14 @@ const {
         select.addEventListener('change', () => {
           localStorage.setItem('erstudio-language', select.value);
           applyLanguage(select.value);
+        });
+      });
+
+      languageChoices.forEach((choice) => {
+        choice.addEventListener('click', () => {
+          const language = choice.dataset.languageChoice || 'en';
+          localStorage.setItem('erstudio-language', language);
+          applyLanguage(language);
         });
       });
 
